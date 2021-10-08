@@ -3,7 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CatModule } from './cat/cat.module';
 import { GraphQLModule } from '@nestjs/graphql';
-import { MongooseModule } from '@nestjs/mongoose';
+// import { MongooseModule } from '@nestjs/mongoose';
+import config from './configs/config';
+
+// const conectionMongoose = `${config.mongodb.}`;
+console.log('debug');
+console.log(config.mongodb);
+console.log('Process: ', process.env);
 
 @Module({
   imports: [
@@ -11,7 +17,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     GraphQLModule.forRoot({
       autoSchemaFile: 'schema.ggl',
     }),
-    MongooseModule.forRoot(''),
+    // MongooseModule.forRoot(`mongodb://username:password@host:port/database`),
   ],
   controllers: [AppController],
   providers: [AppService],
