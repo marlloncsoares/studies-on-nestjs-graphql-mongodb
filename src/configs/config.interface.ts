@@ -1,8 +1,8 @@
 export interface Config {
-  mongodb: MongooseConfig;
+  mongodb: MongodbConfig;
 }
 
-export interface MongooseConfig {
+export interface MongodbConfig {
   username: string;
   password: string;
   host: string;
