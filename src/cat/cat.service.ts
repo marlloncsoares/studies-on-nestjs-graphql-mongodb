@@ -16,4 +16,12 @@ export class CatService {
     const createdCat = new this.catModel(createCatDto);
     return createdCat.save();
   }
+
+  async update(id: string, updateCatDto: CatType): Promise<Cat> {
+    return this.catModel.findByIdAndUpdate(id, updateCatDto);
+  }
+
+  async delete(id: string): Promise<Cat> {
+    return this.catModel.findByIdAndDelete(id);
+  }
 }

@@ -15,4 +15,14 @@ export class CatResolver {
   async createCat(@Args('input') input: CatType) {
     return this.catService.create(input);
   }
+
+  @Mutation((returns) => CatType)
+  async updateCat(@Args('id') id: string, @Args('input') input: CatType) {
+    return this.catService.update(id, input);
+  }
+
+  @Mutation((returns) => CatType)
+  async deleteCat(@Args('id') id: string) {
+    return this.catService.delete(id);
+  }
 }

@@ -32,4 +32,6 @@ type Query {
 
 type Mutation {
   createCat(input: CatInputType!): CatType!
+  updateCat(input: CatInputType!, id: String!): CatType!
+  deleteCat(id: String!): CatType!
 }
