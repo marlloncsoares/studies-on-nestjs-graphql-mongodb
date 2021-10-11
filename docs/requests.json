@@ -1,0 +1,209 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2021-10-11T15:49:53.567Z",
+    "__export_source": "insomnia.desktop.app:v2021.4.1",
+    "resources": [
+        {
+            "_id": "req_88e422c1d7c3453d987cd70d1b2425cd",
+            "parentId": "fld_ed56c8deb8ab406fb5c340ebf7dd8184",
+            "modified": 1633967310837,
+            "created": 1633966134292,
+            "url": "{{ _.BASE_URL }}",
+            "name": "@Query / findAll",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/graphql",
+                "text": "{\"query\":\"query {\\n  cats {\\n    breed\\n    characteristics {\\n      lifespan\\n      size\\n      coat\\n      color\\n    }\\n  }\\n}\"}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_de826a1d37e449a2aaf1f66fa6602a23"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1633966104506,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_ed56c8deb8ab406fb5c340ebf7dd8184",
+            "parentId": "wrk_e5835b72e1a847b795d4c48701206539",
+            "modified": 1633966104531,
+            "created": 1633966104531,
+            "name": "Cats",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1633966104531,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_e5835b72e1a847b795d4c48701206539",
+            "parentId": null,
+            "modified": 1633965902959,
+            "created": 1633965902959,
+            "name": "Studies on nestjs graphql mongodb",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_35cae5223fc140b89d6fd4c91398a5a5",
+            "parentId": "fld_ed56c8deb8ab406fb5c340ebf7dd8184",
+            "modified": 1633966875043,
+            "created": 1633966376167,
+            "url": "{{ _.BASE_URL }}",
+            "name": "@Mutation / createCat",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/graphql",
+                "text": "{\"query\":\"mutation CreateCat($input: CatInputType!) {\\n  createCat(input: $input) {\\n    breed\\n    characteristics {\\n      lifespan\\n      size\\n      coat\\n      color\\n    }\\n  }\\n}\",\"variables\":{\"input\":{\"breed\":\"Persa\",\"characteristics\":{\"lifespan\":\"10 anos\",\"size\":\"medium\",\"coat\":\"Lorem\",\"color\":\"Yellow\"}}},\"operationName\":\"CreateCat\"}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_de826a1d37e449a2aaf1f66fa6602a23"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1633966104456,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_39fde29fb030401181e750399f0625b8",
+            "parentId": "fld_ed56c8deb8ab406fb5c340ebf7dd8184",
+            "modified": 1633967218509,
+            "created": 1633966886378,
+            "url": "{{ _.BASE_URL }}",
+            "name": "@Mutation / updateCat",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/graphql",
+                "text": "{\"query\":\"mutation UpdateCat(\\n  $id: String!, \\n  $input: CatInputType!\\n) {  \\n  updateCat(id: $id, input: $input) {\\n    breed\\n    characteristics {\\n      lifespan\\n      size\\n      coat\\n      color\\n    }\\n  }\\n}\",\"variables\":{\"id\":\"61645aedeeee44b83e0f09cb\",\"input\":{\"breed\":\"Persa\",\"characteristics\":{\"lifespan\":\"20 anos\",\"size\":\"medium\",\"coat\":\"Lorem\",\"color\":\"Yellow\"}}},\"operationName\":\"UpdateCat\"}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_de826a1d37e449a2aaf1f66fa6602a23"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1633887330581.8125,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_e5e4560b74b747c98facb1c4739f1b30",
+            "parentId": "fld_ed56c8deb8ab406fb5c340ebf7dd8184",
+            "modified": 1633967293361,
+            "created": 1633967212753,
+            "url": "{{ _.BASE_URL }}",
+            "name": "@Mutation / deleteCat",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/graphql",
+                "text": "{\"query\":\"mutation DeleteCat($id: String!) {\\n  deleteCat(id: $id) {\\n    breed\\n    characteristics {\\n      lifespan\\n      size\\n      coat\\n      color\\n    }\\n  }\\n}\",\"variables\":{\"id\":\"61645bafeeee44b83e0f09ce\"},\"operationName\":\"DeleteCat\"}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_de826a1d37e449a2aaf1f66fa6602a23"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1633808556707.625,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_4676108d8bb4d912f98fdd9361ce0714be6b0095",
+            "parentId": "wrk_e5835b72e1a847b795d4c48701206539",
+            "modified": 1633965903141,
+            "created": 1633965903141,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1633965903141,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_4676108d8bb4d912f98fdd9361ce0714be6b0095",
+            "parentId": "wrk_e5835b72e1a847b795d4c48701206539",
+            "modified": 1633965903143,
+            "created": 1633965903143,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_fdaf8e931d4347429ac6ffd64f262b64",
+            "parentId": "wrk_e5835b72e1a847b795d4c48701206539",
+            "modified": 1633965902961,
+            "created": 1633965902961,
+            "fileName": "Studies on nestjs graphql mongodb",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        },
+        {
+            "_id": "env_b65ed65dc3714888951b4e3114534b6e",
+            "parentId": "env_4676108d8bb4d912f98fdd9361ce0714be6b0095",
+            "modified": 1633966292039,
+            "created": 1633965938310,
+            "name": "LOCAL_3000",
+            "data": {
+                "BASE_URL": "http://localhost:3000/graphql"
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "BASE_URL"
+                ]
+            },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1633965938310,
+            "_type": "environment"
+        }
+    ]
+}
