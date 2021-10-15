@@ -1,4 +1,5 @@
 import { Resolver, Query, Args, Mutation } from '@nestjs/graphql';
+import { ResolveTypeFactory } from '@nestjs/graphql/dist/schema-builder/factories/resolve-type.factory';
 import { CatService } from './cat.service';
 import { CatType } from './dto/cat.dto';
 

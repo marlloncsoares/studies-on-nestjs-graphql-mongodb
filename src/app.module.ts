@@ -13,13 +13,13 @@ import configuration from './configs/config';
       isGlobal: true,
       load: [configuration],
     }),
-    CatModule,
     GraphQLModule.forRoot({
       autoSchemaFile: 'schema.ggl',
     }),
     MongooseModule.forRoot(
       `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/${process.env.MONGODB_DATABASE}`,
     ),
+    CatModule,
   ],
   controllers: [AppController],
   providers: [AppService],
